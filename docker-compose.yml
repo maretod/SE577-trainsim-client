@@ -4,6 +4,8 @@ services:
         build: trainsim-client
         networks: 
             - se577-trainsim-itinerary_default
+            - se577-trainsim-user_default
+            - se577-trainsim-usercart_default
         volumes:
             - ./trainsim-client/dist:/usr/share/nginx/html
         ports:
@@ -11,4 +13,8 @@ services:
 
 networks:
     se577-trainsim-itinerary_default:
+        external: true
+    se577-trainsim-user_default:
+        external: true
+    se577-trainsim-usercart_default:
         external: true
