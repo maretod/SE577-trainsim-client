@@ -2,7 +2,13 @@ version: "3.9"
 services:
     trainsim-client:
         build: trainsim-client
+        networks: 
+            - se577-trainsim-itinerary_default
         volumes:
             - ./trainsim-client/dist:/usr/share/nginx/html
         ports:
-            - 8000:80
+            - 14000:80
+
+networks:
+    se577-trainsim-itinerary_default:
+        external: true
